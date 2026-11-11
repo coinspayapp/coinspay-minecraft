@@ -1,0 +1,40 @@
+# CoinsPay for Minecraft on a proxy (Velocity or BungeeCord).
+# Docs: https://github.com/coinspayapp/coinspay-minecraft
+#
+# On a proxy /donate works on every server of the network and item commands run on the
+# PROXY console: use proxy commands, such as LuckPerms installed on the proxy. To run commands
+# of a particular server (give, kits), install the plugin on that server instead, with its
+# own server-id.
+#
+# 1. In the CoinsPay dashboard open your shop -> "API keys" -> "Create key", access "Invoices only".
+#    For a dry run tick "Test key" (cpk_test_...): the payment page then has a "Pay" button.
+# 2. Put the key below, describe your items and run /coinspay reload.
+#
+# Mojang's usage guidelines forbid selling gameplay advantages (pay-to-win). You are
+# responsible for what your network sells.
+
+api:
+  url: https://coinspay.app/api/v1
+  key: ""
+
+server-id: proxy
+language: auto
+currency: USD
+buyer-pays-fee: false
+buyer-pays-network: false
+invoice-lifetime-minutes: 60
+max-open-per-player: 2
+cooldown-seconds: 10
+poll-seconds: 10
+return-url: ""
+
+# Placeholders: {player} {uuid} {package} {amount} {currency} {invoice}
+# Fields: name, description, price, currency, require-online, duration, expire-commands
+# (see the comments in the server config.yml in the docs).
+packages:
+  vip-30:
+    name: "&6VIP for 30 days"
+    price: "4.99"
+    # LuckPerms on the proxy: lpv on Velocity, lpb on BungeeCord.
+    commands:
+      - "lpv user {player} parent addtemp vip 30d accumulate"

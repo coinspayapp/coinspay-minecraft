@@ -1,0 +1,5 @@
+name: CoinsPay
+version: "${version}"
+main: com.coinspay.mc.bungee.CoinsPayBungee
+author: CoinsPay
+description: Crypto payments for your network store, paid out straight to your wallets.

@@ -1,0 +1,23 @@
+name: CoinsPay
+version: "${version}"
+main: com.coinspay.mc.bukkit.CoinsPayBukkit
+api-version: "1.13"
+folia-supported: true
+author: CoinsPay
+website: https://coinspay.app
+description: Crypto payments for your server store, paid out straight to your wallets.
+commands:
+  donate:
+    description: Open the store
+    usage: /donate [item]
+    aliases: [cpdonate]
+  coinspay:
+    description: CoinsPay admin commands
+    usage: /coinspay <status|pending|check|redeliver|markdone|give|reload>
+permissions:
+  coinspay.donate:
+    description: Buy items with /donate
+    default: true
+  coinspay.admin:
+    description: Use /coinspay
+    default: op

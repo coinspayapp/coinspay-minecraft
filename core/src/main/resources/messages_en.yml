@@ -1,0 +1,74 @@
+# CoinsPay plugin texts for players with any non-Russian client.
+# Colours are &-codes: &a green, &e yellow, &7 grey, &f white, &l bold.
+# A deleted line falls back to the built-in text. After editing: /coinspay reload
+
+prefix: "&8[&6CoinsPay&8] &7"
+
+menu-title: "Store"
+menu-header: "&6&lStore &7- pay with crypto"
+menu-line: "&e• {name} &7- &f{price} {currency}{duration}"
+menu-duration: " &7for {duration}"
+menu-buy: "&a[Buy]"
+menu-buy-hover: "Get a payment link"
+menu-lore-price: "&7Price: &f{price} {currency}"
+menu-lore-duration: "&7Lasts: &f{duration}"
+menu-lore-click: "&aClick to buy"
+no-packages: "The store is empty for now."
+
+creating: "Creating an invoice for &f{name}&7..."
+created: "Your invoice for &f{price} {currency}&7 for &f{name}&7 is ready. Pay with crypto on the payment page:"
+link: "&a&n[Open the payment page]"
+link-hover: "Opens in your browser: {url}"
+link-hint: "&7The link works for {minutes} min. You get the item as soon as the payment arrives."
+qr-given: "The link's QR code is on the map in your hand: scan it with your phone."
+test-mode: "&eTest mode: no real money is charged."
+
+paid: "&aPayment received! Delivering &f{name}&a."
+paid-until: "&7\"{name}\" lasts another {left}."
+partial: "Received &f{paid}&7 of &f{amount} {currency}&7. Pay the remaining &f{due} {currency}&7 using the same link."
+expired: "The invoice for &f{name}&7 has expired. If you already sent the payment, you get the item when it arrives."
+cancelled: "The invoice for &f{name}&7 was cancelled."
+grant-expired: "\"&f{name}&7\" has ended."
+
+too-many-open: "&cYou already have {count} unpaid invoices. Pay them or wait until they expire."
+cooldown: "&cWait {seconds}s before a new invoice."
+unknown-package: "&cNo such item: {id}"
+not-configured: "&cThe store is not set up yet: the admin needs to add an API key."
+error: "&cCould not create the invoice. Try again a bit later."
+rate-limited: "&cToo many requests. Try again in a minute."
+bad-name: "&cYour name has characters that make a purchase impossible."
+players-only: "This command is for players."
+no-permission: "&cYou do not have permission."
+player-not-found: "&cPlayer {player} is not online."
+
+admin-help: |-
+  &6CoinsPay {version}&7 commands:
+  &e/coinspay status&7 - key, shop, queue
+  &e/coinspay pending&7 - unpaid, waiting and timed items
+  &e/coinspay check <invoice>&7 - check an invoice now
+  &e/coinspay redeliver <invoice>&7 - run the item commands again
+  &e/coinspay markdone <invoice>&7 - mark delivered without commands
+  &e/coinspay give <player> <item>&7 - send a player an invoice
+  &e/coinspay reload&7 - reread config.yml and texts
+admin-reloaded: "&aSettings reloaded. Items: {count}."
+admin-reload-failed: "&cCould not reload the settings: {error}"
+admin-not-found: "&cInvoice {id} is not in this server's data.json."
+admin-redelivered: "&aThe commands of invoice {id} ran again."
+admin-marked: "&aInvoice {id} is marked delivered."
+admin-wrong-state: "&cInvoice {id} is {state}: this action does not apply."
+admin-checked: "Invoice {id}: {status} in CoinsPay, {state} in the plugin."
+admin-check-failed: "&cCould not check invoice {id}: {error}"
+admin-gave: "&aAn invoice for {name} was sent to {player}."
+admin-pending-empty: "No unpaid or waiting invoices, no timed items."
+admin-pending-order: "&f{id}&7 {player} - {name}: &e{state}&7, {age} ago"
+admin-pending-grant: "&f{player}&7 - {name}: {left} left"
+admin-status: |-
+  &6CoinsPay {version}&7 on {platform}
+  Shop: &f{shop}&7, key: &f{key}&7
+  Server: &f{server}&7, items: &f{packages}&7
+  Invoices: open &f{open}&7, waiting for the player &f{waiting}&7, to review &f{review}&7, timed &f{grants}
+  Last API error: &f{error}
+key-test: "test"
+key-live: "live"
+key-unknown: "not checked"
+none: "none"

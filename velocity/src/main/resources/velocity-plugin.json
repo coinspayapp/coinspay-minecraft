@@ -1,0 +1,10 @@
+{
+  "id": "coinspay",
+  "name": "CoinsPay",
+  "version": "${version}",
+  "description": "Crypto payments for your network store, paid out straight to your wallets.",
+  "url": "https://coinspay.app",
+  "authors": ["CoinsPay"],
+  "dependencies": [],
+  "main": "com.coinspay.mc.velocity.CoinsPayVelocity"
+}

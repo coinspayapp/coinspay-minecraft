@@ -1,0 +1,74 @@
+# Тексты плагина CoinsPay для игроков с русским клиентом.
+# Цвета — коды &: &a зелёный, &e жёлтый, &7 серый, &f белый, &l жирный.
+# Удалённая строка берётся из встроенных текстов. После правки: /coinspay reload
+
+prefix: "&8[&6CoinsPay&8] &7"
+
+menu-title: "Донат-магазин"
+menu-header: "&6&lДонат-магазин &7— оплата криптовалютой"
+menu-line: "&e• {name} &7— &f{price} {currency}{duration}"
+menu-duration: " &7на {duration}"
+menu-buy: "&a[Купить]"
+menu-buy-hover: "Получить ссылку на оплату"
+menu-lore-price: "&7Цена: &f{price} {currency}"
+menu-lore-duration: "&7Срок: &f{duration}"
+menu-lore-click: "&aНажмите, чтобы купить"
+no-packages: "Магазин пока пуст."
+
+creating: "Создаём счёт на &f{name}&7…"
+created: "Счёт на &f{price} {currency}&7 за &f{name}&7 готов. Оплатите криптовалютой на странице оплаты:"
+link: "&a&n[Открыть страницу оплаты]"
+link-hover: "Откроется в браузере: {url}"
+link-hint: "&7Ссылка действует {minutes} мин. Товар выдадим сами, как только придёт оплата."
+qr-given: "QR-код ссылки — на карте в руке: отсканируйте его телефоном."
+test-mode: "&eТестовый режим: настоящие деньги не списываются."
+
+paid: "&aОплата получена! Выдаём &f{name}&a."
+paid-until: "&7«{name}» действует ещё {left}."
+partial: "Получено &f{paid}&7 из &f{amount} {currency}&7. Осталось доплатить &f{due} {currency}&7 по той же ссылке."
+expired: "Время оплаты счёта за &f{name}&7 вышло. Если вы уже отправили платёж — товар выдадим, когда он придёт."
+cancelled: "Счёт за &f{name}&7 отменён."
+grant-expired: "Срок «&f{name}&7» закончился."
+
+too-many-open: "&cНеоплаченных счетов у вас уже {count}: оплатите их или дождитесь, пока выйдет срок."
+cooldown: "&cПодождите {seconds} с перед новым счётом."
+unknown-package: "&cНет такого товара: {id}"
+not-configured: "&cМагазин ещё не настроен: администратору нужно указать ключ API."
+error: "&cНе удалось создать счёт. Попробуйте чуть позже."
+rate-limited: "&cСлишком много запросов. Попробуйте через минуту."
+bad-name: "&cВ вашем нике есть символы, с которыми покупка невозможна."
+players-only: "Эта команда — для игроков."
+no-permission: "&cНедостаточно прав."
+player-not-found: "&cИгрок {player} не в сети."
+
+admin-help: |-
+  &6CoinsPay {version}&7 — команды:
+  &e/coinspay status&7 — ключ, магазин, очередь
+  &e/coinspay pending&7 — неоплаченные, ожидающие и сроки
+  &e/coinspay check <счёт>&7 — проверить счёт сейчас
+  &e/coinspay redeliver <счёт>&7 — выполнить команды товара ещё раз
+  &e/coinspay markdone <счёт>&7 — отметить выданным без команд
+  &e/coinspay give <игрок> <товар>&7 — выставить счёт игроку
+  &e/coinspay reload&7 — перечитать config.yml и тексты
+admin-reloaded: "&aНастройки перечитаны. Товаров: {count}."
+admin-reload-failed: "&cНе удалось перечитать настройки: {error}"
+admin-not-found: "&cСчёт {id} не найден в data.json этого сервера."
+admin-redelivered: "&aКоманды счёта {id} выполнены ещё раз."
+admin-marked: "&aСчёт {id} отмечен выданным."
+admin-wrong-state: "&cСчёт {id} в состоянии {state}: здесь это действие не нужно."
+admin-checked: "Счёт {id}: в CoinsPay — {status}, у плагина — {state}."
+admin-check-failed: "&cНе удалось проверить счёт {id}: {error}"
+admin-gave: "&aСчёт за {name} выставлен игроку {player}."
+admin-pending-empty: "Нет неоплаченных и ожидающих счетов, сроков нет."
+admin-pending-order: "&f{id}&7 {player} — {name}: &e{state}&7, {age} назад"
+admin-pending-grant: "&f{player}&7 — {name}: ещё {left}"
+admin-status: |-
+  &6CoinsPay {version}&7 на {platform}
+  Магазин: &f{shop}&7, ключ: &f{key}&7
+  Сервер: &f{server}&7, товаров: &f{packages}&7
+  Счета: открытых &f{open}&7, ждут игрока &f{waiting}&7, на проверку &f{review}&7, сроков &f{grants}
+  Последняя ошибка API: &f{error}
+key-test: "тестовый"
+key-live: "боевой"
+key-unknown: "не проверен"
+none: "нет"

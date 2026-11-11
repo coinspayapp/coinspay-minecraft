@@ -1,0 +1,79 @@
+# CoinsPay for Minecraft: crypto payments for your server's store.
+# Docs: https://github.com/coinspayapp/coinspay-minecraft
+#
+# 1. In the CoinsPay dashboard open your shop -> "API keys" -> "Create key", access "Invoices only".
+#    A key with that access cannot make payouts, so a leaked config does not put money at risk.
+#    For a dry run tick "Test key" (cpk_test_...): the payment page then has a "Pay" button.
+# 2. Put the key below, describe your items and run /coinspay reload.
+#
+# Mojang's usage guidelines forbid selling gameplay advantages (pay-to-win). You are
+# responsible for what your server sells.
+
+api:
+  url: https://coinspay.app/api/v1
+  key: ""
+
+# Goes into every invoice reference. Give each server of a network its own id.
+server-id: main
+
+# Player texts: auto (by the client language), ru or en. Texts: messages_ru.yml, messages_en.yml.
+language: auto
+
+# Price currency: USD, EUR, RUB... An item may set its own "currency".
+currency: USD
+# The buyer pays the CoinsPay fee and/or the network fee of your payout on top of the price.
+buyer-pays-fee: false
+buyer-pays-network: false
+
+invoice-lifetime-minutes: 60
+max-open-per-player: 2
+cooldown-seconds: 10
+# How often to ask CoinsPay about payments, in seconds (5 or more).
+poll-seconds: 10
+
+# /donate opens a chest menu (gui) or prints a list with buttons in chat (chat).
+menu: gui
+# Hand the player a map with the payment link's QR code to scan with a phone.
+qr-map: true
+# Where the payment page's "Back to the shop" button leads, e.g. your server's website.
+return-url: ""
+
+# Items. Commands run from the console after payment; leave out the leading slash.
+# Placeholders: {player} {uuid} {package} {amount} {currency} {invoice}
+#   name            menu and invoice title, &-colours allowed
+#   description     extra lines under the name in the menu
+#   icon            menu item material (modern names; unknown ones show an emerald)
+#   price           price in the currency
+#   require-online  wait until the player is online on this server (items, kits)
+#   duration        how long the item lasts: 30d, 12h, 90m, 2w, 1mo; buying again extends it
+#   expire-commands run when the duration ends, even if the player is offline
+packages:
+  vip-30:
+    name: "&6VIP for 30 days"
+    description:
+      - "Gold name and the /hat command"
+    icon: GOLD_INGOT
+    price: "4.99"
+    # LuckPerms keeps the time itself; "accumulate" adds 30 days to a running VIP.
+    commands:
+      - "lp user {player} parent addtemp vip 30d accumulate"
+
+  diamonds:
+    name: "&b16 diamonds"
+    icon: DIAMOND
+    price: "1.50"
+    require-online: true
+    commands:
+      - "give {player} diamond 16"
+
+  fly-7:
+    name: "&aFlight for 7 days"
+    description:
+      - "Without LuckPerms: the plugin keeps the time"
+    icon: FEATHER
+    price: "2.00"
+    duration: 7d
+    commands:
+      - "lp user {player} permission set essentials.fly true"
+    expire-commands:
+      - "lp user {player} permission unset essentials.fly"
