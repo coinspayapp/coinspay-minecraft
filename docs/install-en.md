@@ -5,7 +5,7 @@ picks an item and pays on the CoinsPay page. The plugin runs the item's commands
 the money goes straight to your wallets.
 
 Supported:
-- **Spigot and Paper 1.8.8 – 1.21;**
+- **Spigot and Paper 1.8.8 – 26.3;**
 - **Folia;**
 - **Velocity 3.3+ and BungeeCord networks.**
 

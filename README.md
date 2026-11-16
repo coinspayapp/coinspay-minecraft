@@ -10,8 +10,8 @@ One jar for every platform below.
 
 | | Minimum | Tested on |
 |---|---|---|
-| Spigot, Paper | 1.8.8 | 1.8.8, 1.12.2, 1.16.5, 1.20.6, 1.21.4 |
-| Folia | | 1.21.4 |
+| Spigot, Paper | 1.8.8 | 1.8.8, 1.12.2, 1.16.5, 1.20.6, 1.21.4, 1.21.11, 26.1.2, 26.3 |
+| Folia | | 1.21.4, 26.3 |
 | Velocity | 3.3 | 4.3.1 |
 | BungeeCord (and forks) | | 26.1 |
 | Java | 8, 17 for Velocity | 8, 21, 25 |
