@@ -20,8 +20,9 @@ You also need a [CoinsPay](https://coinspay.app) account with a shop.
 
 ## Quick start
 
-1. Download `CoinsPay-<version>.jar` from [Releases](https://github.com/coinspayapp/coinspay-minecraft/releases/latest)
-   or [Hangar](https://hangar.papermc.io/CoinsPay/CoinsPay).
+1. Download `CoinsPay-<version>.jar` from [Releases](https://github.com/coinspayapp/coinspay-minecraft/releases/latest),
+   [Hangar](https://hangar.papermc.io/CoinsPay/CoinsPay) or
+   [SpigotMC](https://www.spigotmc.org/resources/coinspay-crypto-donations-for-minecraft-usdt-btc-eth.140709/).
 2. In the CoinsPay dashboard open your shop → "API keys" → "Create key", access **"Invoices only"**.
 3. Put the jar into `plugins/` and restart the server.
 4. Paste the key into `plugins/CoinsPay/config.yml` (`api.key`) and describe your items under
